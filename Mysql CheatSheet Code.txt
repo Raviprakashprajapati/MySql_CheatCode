@@ -1,0 +1,89 @@
+mysql -u root -p
+
+create database <name>
+
+show databases;
+
+use database;
+
+show tables;
+
+Integrity constraints--
+NOT NULL, DEFAULT V, CHECK (col>V), PRIMARY KEY, 
+FOREIGN KEY(coll) REFERENCES ParentTable(col)
+
+DataTypes--
+CHAR(), VARCHAR(), ENUM(v,v,v), INT, DATE, DATETIME   //yyyy-mm-dd hh-mm-ss
+
+CREATE TABLE <name>( 
+    id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(100),
+)
+
+CREATE TABLE <name> (
+    id INT NOT NULL PRIMARY KEY,
+    parentColl INT
+    FOREIGN KEY (parentColl) REFERENCES ParentTable (id)
+)
+
+
+DESC <TABLE>
+
+Function--
+COUNT(*), DISTINCT(*), MAX(*), MIN(*), SUM(*), AVG(*) 
+
+SELECT * from T
+SELECT * from T LIMIT V
+SELECT * from T WHERE col=v
+SELECT * from T WHERE col BETWEEN v AND v
+SELECT * from T WHERE col LIKE "r_%"
+SELECT * from T WHERE col=v AND col=v            || OR
+SELECT * from T WHERE IN (-,-,-,)                || NOT IN (-,-,-)
+SELECT * from T WHERE ORDER BY col               || desc
+SELECT course from T  GROUP BY course 
+SELECT course from T  GROUP BY course HAVING count(*)>3
+
+INSERT INTO T (col,col) VALUES (-,-)
+INSERT INTO T VALUES (-,-,-,-)
+
+UPDATE <tableName> SET col=v,col=v WHERE col=V
+DELETE from <tableName> WHERE col=V
+DROP TABLE <tableName>
+
+ALTER Table <tableName> ADD <newCol> <datatype> <constraints>
+ALTER Table <tableName> CHANGE <oldCol> <newCol> <datatype> 
+ALTER TABLE <tableName> DROP <col> 
+ALTER TABLE <tableName> ADD PK(col)
+ALTER TABLE <tableName> DROP PK
+
+Referencing Actions--
+ON DELETE, ON UPDATE, 
+CASCADE - if del or update from parent table then it will also del or update in child table
+SET NULL - it will set NULL in child table
+No Action - not allowed
+Restrict - reject query
+
+Ex:create table <tableName>(
+    -----,
+    -----
+    ON DELETE NO Action
+    ON UPDATE NO Action
+)
+
+
+joins--
+SELECT * from t1 INNER JOIN t2 ON(t1.id = t2.id)
+SELECT * from t1 LEFT JOIN t2 ON(t1.id = t2.id)
+SELECT * from t1 RIGHT JOIN t2 ON(t1.id = t2.id)
+SELECT * from t1 FULL JOIN t2 ON(t1.id = t2.id)
+
+
+
+
+
+
+
+
+
+
+
