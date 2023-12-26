@@ -34,6 +34,7 @@ COUNT(*), DISTINCT(*), MAX(*), MIN(*), SUM(*), AVG(*)
 
 SELECT * from T
 SELECT * from T LIMIT V
+select * from T limit 1 OFFSET 1
 SELECT * from T WHERE col=v
 SELECT * from T WHERE col BETWEEN v AND v
 SELECT * from T WHERE col LIKE "r_%"
