@@ -39,9 +39,9 @@ SELECT * from T WHERE col BETWEEN v AND v
 SELECT * from T WHERE col LIKE "r_%"
 SELECT * from T WHERE col=v AND col=v            || OR
 SELECT * from T WHERE IN (-,-,-,)                || NOT IN (-,-,-)
-SELECT * from T WHERE ORDER BY col               || desc
 SELECT course from T  GROUP BY course 
 SELECT course from T  GROUP BY course HAVING count(*)>3
+SELECT * from T  ORDER BY col                    || desc
 
 INSERT INTO T (col,col) VALUES (-,-)
 INSERT INTO T VALUES (-,-,-,-)
@@ -81,6 +81,9 @@ SELECT * from t1 FULL JOIN t2 ON(t1.id = t2.id)
 Joins with group by--
 Select name,COUNT(*) as Phones ,SUM(price) as totalprice  from person as p INNER JOIN phone as ph ON(p.id=ph.personid) GROUP BY name
 
+
+secondLargest--
+ select MAX(price) as secondLargest from phone WHERE price <(select MAX(price) from phone );
 
 
 
