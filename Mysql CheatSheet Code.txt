@@ -63,13 +63,14 @@ SET NULL - it will set NULL in child table
 No Action - not allowed
 Restrict - reject query
 
+it apply in childTable after fk 
+
 Ex:create table <tableName>(
     -----,
-    -----
+    -----,
     ON DELETE NO Action
     ON UPDATE NO Action
 )
-
 
 joins--
 SELECT * from t1 INNER JOIN t2 ON(t1.id = t2.id)
