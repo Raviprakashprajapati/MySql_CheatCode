@@ -78,6 +78,10 @@ SELECT * from t1 RIGHT JOIN t2 ON(t1.id = t2.id)
 SELECT * from t1 FULL JOIN t2 ON(t1.id = t2.id)
 
 
+Joins with group by--
+Select name,COUNT(*) as Phones ,SUM(price) as totalprice  from person as p INNER JOIN phone as ph ON(p.id=ph.personid) GROUP BY name
+
+
 
 
 
