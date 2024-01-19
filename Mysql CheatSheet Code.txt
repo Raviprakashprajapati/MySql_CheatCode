@@ -56,6 +56,9 @@ ALTER Table <tableName> CHANGE <oldCol> <newCol> <datatype>
 ALTER TABLE <tableName> DROP <col> 
 ALTER TABLE <tableName> ADD PK(col)
 ALTER TABLE <tableName> DROP PK
+ALTER TABLE <tableName> MODIFY <col> AUTO_INCREMENT;
+
+SET foreign_key_checks=0; IF Want to modify column then set =1
 
 Referencing Actions--
 ON DELETE, ON UPDATE, 
@@ -86,6 +89,7 @@ Select name,COUNT(*) as Phones ,SUM(price) as totalprice  from person as p INNER
 
 secondLargest--
  select MAX(price) as secondLargest from phone WHERE price <(select MAX(price) from phone );
+
 
 
 
