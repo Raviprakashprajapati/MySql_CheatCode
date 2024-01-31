@@ -91,6 +91,7 @@ secondLargest--
  select MAX(price) as secondLargest from phone WHERE price <(select MAX(price) from phone );
 
 ROUNDE(v,decimal);
+IFNULL(v,0);
 
 
 
